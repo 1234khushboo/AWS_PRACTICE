@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS student_db;
+USE student_db;
+
+CREATE TABLE IF NOT EXISTS students (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  course VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Optional sample records
+INSERT IGNORE INTO students (name, email, course) VALUES
+('Aarav Sharma', 'aarav@example.com', 'Computer Science'),
+('Priya Singh', 'priya@example.com', 'Information Technology');
